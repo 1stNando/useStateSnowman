@@ -1,12 +1,24 @@
 import React from 'react'
-import step_7 from '/src/images/step_7.png'
 
 export function App() {
   // Space for code
+  // What state can we define and keep track of??
+
+  // handleNewGame
+  function newGame() {
+    console.log('NEW GAME')
+  }
+
+  function handleClickLetter() {
+    console.log('You clicked!')
+  }
 
   return (
     <main>
       <h1>Title Head</h1>
+      <h1>
+        Click to <button onClick={newGame}>START</button>
+      </h1>
       <span>SpaceForAnImage</span>
       <section>
         <ul className="unknown-word-box">
@@ -20,32 +32,32 @@ export function App() {
         </ul>
       </section>
       <ul className="alphabet-list">
-        <li>A</li>
-        <li>B</li>
-        <li>C</li>
-        <li>D</li>
-        <li>E</li>
-        <li>F</li>
-        <li>G</li>
-        <li>H</li>
-        <li>I</li>
-        <li>J</li>
-        <li>K</li>
-        <li>L</li>
-        <li>M</li>
-        <li>N</li>
-        <li>O</li>
-        <li>P</li>
-        <li>Q</li>
-        <li>R</li>
-        <li>S</li>
-        <li>T</li>
-        <li>U</li>
-        <li>V</li>
-        <li>W</li>
-        <li>X</li>
-        <li>Y</li>
-        <li>Z</li>
+        <li onClick={handleClickLetter}>A</li>
+        <li onClick={handleClickLetter}>B</li>
+        <li onClick={handleClickLetter}>C</li>
+        <li onClick={handleClickLetter}>D</li>
+        <li onClick={handleClickLetter}>E</li>
+        <li onClick={handleClickLetter}>F</li>
+        <li onClick={handleClickLetter}>G</li>
+        <li onClick={handleClickLetter}>H</li>
+        <li onClick={handleClickLetter}>I</li>
+        <li onClick={handleClickLetter}>J</li>
+        <li onClick={handleClickLetter}>K</li>
+        <li onClick={handleClickLetter}>L</li>
+        <li onClick={handleClickLetter}>M</li>
+        <li onClick={handleClickLetter}>N</li>
+        <li onClick={handleClickLetter}>O</li>
+        <li onClick={handleClickLetter}>P</li>
+        <li onClick={handleClickLetter}>Q</li>
+        <li onClick={handleClickLetter}>R</li>
+        <li onClick={handleClickLetter}>S</li>
+        <li onClick={handleClickLetter}>T</li>
+        <li onClick={handleClickLetter}>U</li>
+        <li onClick={handleClickLetter}>V</li>
+        <li onClick={handleClickLetter}>W</li>
+        <li onClick={handleClickLetter}>X</li>
+        <li onClick={handleClickLetter}>Y</li>
+        <li onClick={handleClickLetter}>Z</li>
       </ul>
     </main>
   )
