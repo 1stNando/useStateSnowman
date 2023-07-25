@@ -25,7 +25,24 @@ body {
   align-items: center;
 }
 
-h1 {
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.unknown-word-box {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.unknown-word li {
+  padding: 1px;
+  border: 1px solid black;
 }
 
 .alphabet-list {
