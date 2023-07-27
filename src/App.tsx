@@ -1,8 +1,15 @@
 import React from 'react'
+import step_7 from './images/snowman/step_7.png'
 
 export function App() {
   // Space for code
   // What state can we define and keep track of??
+  //  - hiddenWord (string)
+  //  - guessedLetters (string)
+  //  - correctLetters (string)
+  //    - #ofCorrectLetters(int)
+  //  - wordDisplayed
+  //  - gameState
 
   // handleNewGame
   function newGame() {
@@ -13,13 +20,15 @@ export function App() {
     console.log('You clicked!')
   }
 
+  // handleUnknown space to clickedLetter()
+
   return (
     <main>
       <h1>Title Head</h1>
-      <h1>
+      <h2>
         Click to <button onClick={newGame}>START</button>
-      </h1>
-      <span>SpaceForAnImage</span>
+      </h2>
+      <img className="man" src={step_7}></img>
       <section>
         <ul className="unknown-word-box">
           <li>_</li>

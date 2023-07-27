@@ -16,6 +16,11 @@ html {
   height: 100%;
 }
 
+// Snowman images
+.man {
+  height: 25rem;
+}
+
 body {
   margin: 0;
   min-height: 100%;
@@ -39,6 +44,8 @@ main {
   padding: 0;
   display: flex;
   justify-content: space-between;
+  letter-spacing: 2rem;
+  font-size: 40px;
 }
 .unknown-word li {
   padding: 1px;
