@@ -86,6 +86,25 @@ export function App() {
     )
   }
 
+  // Render the alphabet buttons dynamically
+  const renderAlphabetButtons = () => {
+    const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+    return (
+      <>
+        {alphabet.split("").map((letter) => (
+          <button
+            key={letter}
+            onClick={() => handleClickLetter(letter)}
+            disabled={state.guessedLetters.has(letter)}
+            >
+              {letter}
+            </button>
+        ))}
+      </>
+    )
+  }
+
   
 
 
