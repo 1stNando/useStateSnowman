@@ -68,6 +68,24 @@ export function App() {
     }
   }
 
+  // Render the blanks and letters
+  const renderBlanksAndLetters = () => {
+    const { currentWord, revealedLetters, guessedLetters } = state
+
+    return (
+      <>
+        {currentWord.split("").map((letter, index) => {
+          const isLetterRevealed = revealedLetters[index]
+          return (
+            <span key={index}>
+              {isLetterRevealed || guessedLetters.has(letter) ? letter : "_"}
+            </span>
+          )
+        })}
+      </>
+    )
+  }
+
   
 
 
