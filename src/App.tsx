@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import step_7 from './images/snowman/step_7.png'
+import words from './words.json'
 
 export function App() {
   // Space for code
