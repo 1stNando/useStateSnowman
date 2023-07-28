@@ -52,7 +52,25 @@ export function App() {
     return word.split("").map(() => false)
   }
 
+  // Function to handle letter button click
+  const handleLetterClick = (letter: string) => {
+    const { currentWord, revealedLetters, guessedLetters } = state
+    if (!guessedLetters.has(letter)) {
+      const newRevealedLetters = revealedLetters.map((isRevealed, index) => currentWord[index] === letter ? true : isRevealed)
+
+      guessedLetters.add(letter)
+
+      setState((prevState) => ({
+        ...prevState,
+        revealedLetters: newRevealedLetters,
+        guessedLetters,
+      }))
+    }
+  }
+
   
+
+
 
   return (
     <main>
