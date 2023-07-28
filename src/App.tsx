@@ -31,6 +31,15 @@ export function App() {
     guessedLetters: Set<string>
   }
 
+  // Write a functional component to establish STATE
+  const WordGuess: React.FC<WordGuessProps>({
+    const [state, setState] = useState<WordGuessState>({
+      currentWord: getRandomWord(words),
+      revealedLetters: new Array<boolean>(),
+      guessedLetters: new Set<string>(),
+    })
+  })
+
   return (
     <main>
       <h1>Title Head</h1>
