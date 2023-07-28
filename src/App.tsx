@@ -41,6 +41,19 @@ export function App() {
     })
   })
 
+  // Function to get a random word from the list 
+  const getRandomWord = (words: string[]): string => {
+    const randomIndex = Math.floor(Math.random() * words.length)
+    return words[randomIndex]
+  }
+
+  // Function to set up the revealedLetters array with initial values
+  const initializeRevealedLetters = (word: string): boolean[] => {
+    return word.split("").map(() => false)
+  }
+
+  
+
   return (
     <main>
       <h1>Title Head</h1>
