@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import step_7 from './images/snowman/step_7.png'
 
 export function App() {
@@ -20,7 +20,16 @@ export function App() {
     console.log('You clicked!')
   }
 
-  // handleUnknown space to clickedLetter()
+  // Interfaces to interact with STATE
+  interface WordGuessProps {
+    words: string[]
+  }
+
+  interface WordGuessState {
+    currentWord: string
+    revealedLetters: boolean[]
+    guessedLetters: Set<string>
+  }
 
   return (
     <main>
