@@ -2,12 +2,17 @@ import React, { useState } from 'react'
 import step_7 from './images/snowman/step_7.png'
 import words from './words.json'
 
+// Define variable to hold one randomly chosen word from our imported JSON file.
 let randomWord = words[Math.floor(Math.random() * words.length)]
 
+// Alphabet letters for the buttons to be clicked
+const querty = 'abcdefghijklmnopqrstuvwxyz'.split('')
+
 export function App() {
+  console.log(`Your random word is ${randomWord}`)
+
   return (
     <main>
-      <h1>Title Head</h1>
       <h2>
         Click to <button>START</button>
       </h2>
