@@ -1,3 +1,5 @@
+Find the deployed product at: https://SnowmanNando.netlify.app
+
 Assignment 31 - Do you want to build a Snowman?
 
 In this assignment, you'll build a less grim variation of a popular game called hangman.
