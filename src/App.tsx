@@ -70,6 +70,8 @@ export function App() {
   return (
     <div>
       <main>
+        <header>Welcome to the SnowMan building game!</header>
+        <h1></h1>
         <h2>
           <img src={getSnowman()} height="300px" />
         </h2>
@@ -79,13 +81,13 @@ export function App() {
         </div>
 
         <div>
-          <ul>
+          <ul className="unknown-word-box">
             {wordArray.map((char, i) => {
               return <li key={i}>{guess.includes(char) ? char : '_'}</li>
             })}
           </ul>
         </div>
-        <div className="letters">
+        <div className="alphabet-list">
           {alphabet.map((letter, index) => (
             <button
               key={index}

@@ -38,6 +38,10 @@ main {
   justify-content: center;
 }
 
+header {
+  font-weight: bold;
+}
+
 .unknown-word-box {
   list-style: none;
   margin: 0;
@@ -46,10 +50,6 @@ main {
   justify-content: space-between;
   letter-spacing: 2rem;
   font-size: 40px;
-}
-.unknown-word li {
-  padding: 1px;
-  border: 1px solid black;
 }
 
 .alphabet-list {
@@ -62,7 +62,7 @@ main {
   width: 45vw;
 }
 
-.alphabet-list li {
+.alphabet-list button {
   display: flex;
   justify-content: center;
   align-items: center;
