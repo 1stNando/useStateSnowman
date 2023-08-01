@@ -36,16 +36,29 @@ export function App() {
     setGuess([])
   }
 
-  return (
-    <main>
-      <h2>
-        Click to <button>START</button>
-      </h2>
+  // Make a variable to be placeholder space for the array of letters that make up the random word's letters.
+  let snowmanImage = wordArray.filter((letter) => guess.includes(letter)).length
 
-      <div>
-        <div>WordGuess</div>
-      </div>
-    </main>
+  return (
+    <div>
+      <main>
+        <h2>
+          Click to <button>START</button>
+        </h2>
+
+        <div>
+          <div>WordGuess</div>
+        </div>
+
+        <div>
+          <ul>
+            {wordArray.map((char, i) => {
+              return <li key={i}>{guess.includes(char) ? char : '_'}</li>
+            })}
+          </ul>
+        </div>
+      </main>
+    </div>
   )
 }
 
