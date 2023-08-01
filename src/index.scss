@@ -16,11 +16,6 @@ html {
   height: 100%;
 }
 
-// Snowman images
-.man {
-  height: 25rem;
-}
-
 body {
   margin: 0;
   min-height: 100%;
@@ -28,6 +23,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--sea);
 }
 
 main {
@@ -40,6 +36,8 @@ main {
 
 header {
   font-weight: bold;
+  font-size: 2rem;
+  color: var(--asphalt);
 }
 
 .unknown-word-box {
@@ -69,6 +67,13 @@ header {
   width: 50px;
   height: 50px;
   border: 1px solid blue;
+  background-color: var(--tangerine);
   margin: 5px;
   font-size: 20px;
+}
+
+footer {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
 }
