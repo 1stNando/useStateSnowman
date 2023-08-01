@@ -69,6 +69,12 @@ export function App() {
             </button>
           ))}
         </div>
+
+        <div>
+          <button onClick={() => handleNewGame()} disabled={snowmanImage !== 7}>
+            Click me to play new game.
+          </button>
+        </div>
       </main>
     </div>
   )
