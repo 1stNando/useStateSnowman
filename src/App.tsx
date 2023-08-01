@@ -2,120 +2,24 @@ import React, { useState } from 'react'
 import step_7 from './images/snowman/step_7.png'
 import words from './words.json'
 
+let randomWord = words[Math.floor(Math.random() * words.length)]
+
 export function App() {
-  // Space for code
-  // What state can we define and keep track of??
-  //  - hiddenWord (string)
-  //  - guessedLetters (string)
-  //  - correctLetters (string)
-  //    - #ofCorrectLetters(int)
-  //  - wordDisplayed
-  //  - gameState
-
-  // handleNewGame
-  function newGame() {
-    console.log('NEW GAME')
-  }
-
-  function handleClickLetter() {
-    console.log('You clicked!')
-  }
-
-  // Interfaces to interact with STATE
-  interface WordGuessProps {
-    words: string[]
-  }
-
-  interface WordGuessState {
-    currentWord: string
-    revealedLetters: boolean[]
-    guessedLetters: Set<string>
-  }
-
-  // Write a functional component to establish STATE
-  const WordGuess: React.FC<WordGuessProps>({
-    const [state, setState] = useState<WordGuessState>({
-      currentWord: getRandomWord(words),
-      revealedLetters: new Array<boolean>(),
-      guessedLetters: new Set<string>(),
-    })
-  })
-
-  // Function to get a random word from the list 
-  const getRandomWord = (words: string[]): string => {
-    const randomIndex = Math.floor(Math.random() * words.length)
-    return words[randomIndex]
-  }
-
-  // Function to set up the revealedLetters array with initial values
-  const initializeRevealedLetters = (word: string): boolean[] => {
-    return word.split("").map(() => false)
-  }
-
-  // Function to handle letter button click
-  const handleLetterClick = (letter: string) => {
-    const { currentWord, revealedLetters, guessedLetters } = state
-    if (!guessedLetters.has(letter)) {
-      const newRevealedLetters = revealedLetters.map((isRevealed, index) => currentWord[index] === letter ? true : isRevealed)
-
-      guessedLetters.add(letter)
-
-      setState((prevState) => ({
-        ...prevState,
-        revealedLetters: newRevealedLetters,
-        guessedLetters,
-      }))
-    }
-  }
-
-  // Render the blanks and letters
-  const renderBlanksAndLetters = () => {
-    const { currentWord, revealedLetters, guessedLetters } = state
-
-    return (
-      <>
-        {currentWord.split("").map((letter, index) => {
-          const isLetterRevealed = revealedLetters[index]
-          return (
-            <span key={index}>
-              {isLetterRevealed || guessedLetters.has(letter) ? letter : "_"}
-            </span>
-          )
-        })}
-      </>
-    )
-  }
-
-  // Render the alphabet buttons dynamically
-  const renderAlphabetButtons = () => {
-    const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
-    return (
-      <>
-        {alphabet.split("").map((letter) => (
-          <button
-            key={letter}
-            onClick={() => handleClickLetter(letter)}
-            disabled={state.guessedLetters.has(letter)}
-            >
-              {letter}
-            </button>
-        ))}
-      </>
-    )
-  }
-
-  
-
-
-
   return (
     <main>
       <h1>Title Head</h1>
       <h2>
-        Click to <button onClick={newGame}>START</button>
+        Click to <button>START</button>
       </h2>
-      <img className="man" src={step_7}></img>
+
+      <div>
+        <div>WordGuess</div>
+      </div>
+    </main>
+  )
+}
+
+/* <img className="man" src={step_7}></img>
       <section>
         <ul className="unknown-word-box">
           <li>_</li>
@@ -154,7 +58,4 @@ export function App() {
         <li onClick={handleClickLetter}>X</li>
         <li onClick={handleClickLetter}>Y</li>
         <li onClick={handleClickLetter}>Z</li>
-      </ul>
-    </main>
-  )
-}
+      </ul> */
