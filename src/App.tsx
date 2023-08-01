@@ -1,4 +1,10 @@
 import React, { useState } from 'react'
+import step_1 from './images/snowman/step_1.png'
+import step_2 from './images/snowman/step_2.png'
+import step_3 from './images/snowman/step_3.png'
+import step_4 from './images/snowman/step_4.png'
+import step_5 from './images/snowman/step_5.png'
+import step_6 from './images/snowman/step_6.png'
 import step_7 from './images/snowman/step_7.png'
 import words from './words.json'
 
@@ -36,14 +42,36 @@ export function App() {
     setGuess([])
   }
 
-  // Make a variable to be placeholder space for the array of letters that make up the random word's letters.
-  let snowmanImage = wordArray.filter((letter) => guess.includes(letter)).length
+  // Make a variable to be placeholder space the image number matching guess array length.
+  let snowmanImageFetch = wordArray.filter((letter) =>
+    guess.includes(letter)
+  ).length
+
+  // SNOWMAN switch statement that takes in value of snowmanImageFetch
+  function getSnowman() {
+    switch (snowmanImageFetch) {
+      case 1:
+        return step_1
+      case 2:
+        return step_2
+      case 3:
+        return step_3
+      case 4:
+        return step_4
+      case 5:
+        return step_5
+      case 6:
+        return step_6
+      case 7:
+        return step_7
+    }
+  }
 
   return (
     <div>
       <main>
         <h2>
-          Click to <button>START</button>
+          <img src={getSnowman()} height="300px" />
         </h2>
 
         <div>
@@ -71,7 +99,10 @@ export function App() {
         </div>
 
         <div>
-          <button onClick={() => handleNewGame()} disabled={snowmanImage !== 7}>
+          <button
+            onClick={() => handleNewGame()}
+            disabled={snowmanImageFetch !== 7}
+          >
             Click me to play new game.
           </button>
         </div>
