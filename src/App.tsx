@@ -6,7 +6,7 @@ import words from './words.json'
 let randomWord = words[Math.floor(Math.random() * words.length)]
 
 // Alphabet letters for the buttons to be clicked
-const querty = 'abcdefghijklmnopqrstuvwxyz'.split('')
+const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
 
 export function App() {
   console.log(`Your random word is ${randomWord}`)
@@ -56,6 +56,18 @@ export function App() {
               return <li key={i}>{guess.includes(char) ? char : '_'}</li>
             })}
           </ul>
+        </div>
+        <div className="letters">
+          {alphabet.map((letter, index) => (
+            <button
+              key={index}
+              onClick={() => handleClickedLetter(letter)}
+              disabled={guess.includes(letter)}
+              className={guess.includes(letter) ? 'clicked' : undefined}
+            >
+              {letter}
+            </button>
+          ))}
         </div>
       </main>
     </div>
