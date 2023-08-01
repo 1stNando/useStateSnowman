@@ -11,6 +11,31 @@ const querty = 'abcdefghijklmnopqrstuvwxyz'.split('')
 export function App() {
   console.log(`Your random word is ${randomWord}`)
 
+  // Establish what state we want to keep track of changing. randomWord is passed down into this and establishes a new word.
+  const [wordState, setWordState] = useState(randomWord)
+  const [guess, setGuess] = useState<string[]>([])
+
+  // Set an array constructor to decompose the random word received and create an array.
+  const wordArray = Array.from(wordState)
+
+  //
+
+  // Set an asynchronous function to constantly wait for a letter click, and update the STATE of guess.
+  async function handleClickedLetter(letter: string) {
+    setGuess([...guess, letter])
+  }
+
+  // Function to deal with making a new game.
+  function handleNewGame() {
+    // run the work to find random word from JSON file.
+    randomWord = words[Math.floor(Math.random() * words.length)]
+
+    // Set state to this randomly found word.
+    setWordState(randomWord)
+    // Set the state of guesses to an empty array since no clicks have occurred.
+    setGuess([])
+  }
+
   return (
     <main>
       <h2>
